@@ -3,19 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Etiquetas SEO y Open Graph -->
     <title>SERTICORP - Servicios TI Corporativos</title>
-    <!-- Librería para los iconos de contacto -->
+    <meta name="description" content="SERTICORP S.A.C. - Especialistas en desarrollo e integración de soluciones tecnológicas, networking, data centers y equipamiento TI corporativo en Perú.">
+    <meta property="og:title" content="SERTICORP - Servicios TI Corporativos">
+    <meta property="og:description" content="Transformamos desafíos empresariales mediante soluciones tecnológicas integrales, innovadoras y de alto impacto.">
+    <meta property="og:image" content="imagenes/serticorp.png">
+    <meta property="og:type" content="website">
+
+    <!-- Librería para los iconos de contacto y WhatsApp -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- TRUCO PARA LIMPIAR CACHÉ: Añadimos ?v=3.0 -->
+    <link rel="stylesheet" href="css/style.css?v=3.0">
 </head>
 <body>
-    <!-- Encabezado -->
-    <header class="main-header">
+    <!-- Encabezado Fondo Blanco -->
+    <header class="main-header" id="inicio">
         <div class="logo-container">
-            <img src="imagenes/serticorp.png" alt="Logo de Serticorp" class="logo">
+            <a href="#" id="logo-link">
+                <img src="imagenes/serticorp.png" alt="Logo de Serticorp" class="logo">
+            </a>
         </div>
+        
+        <!-- Menú Hamburguesa -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <nav>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#soluciones">Soluciones</a></li>
                 <li><a href="#socios">Socios</a></li>
@@ -29,22 +49,22 @@
         <div class="hero-content">
             <h1>Impulsamos el futuro a través de la tecnología</h1>
             <p>Transformamos los desafíos empresariales en oportunidades mediante soluciones tecnológicas integrales, innovadoras y de alto impacto, que impulsan la transformación digital y la competitividad.
-Conectamos tecnología, innovación y estrategia para llevar tu negocio al siguiente nivel.</p>
+            Conectamos tecnología, innovación y estrategia para llevar tu negocio al siguiente nivel.</p>
             <a href="#contacto" class="btn-primary">Cotizar Servicios</a>
         </div>
     </section>
 
     <!-- Nosotros -->
     <section id="nosotros" class="section-container bg-white">
-        <div class="nosotros-grid">
+        <div class="nosotros-grid reveal">
             <div class="nosotros-texto">
                 <h2 class="section-title">¿A qué nos dedicamos?</h2>
                 <p>En <strong>SERTICORP S.A.C.</strong>, somos especialistas en el desarrollo e integración de soluciones tecnológicas integrales que impulsan la transformación digital y la evolución de las empresas. Combinamos innovación, tecnología de vanguardia y conocimiento especializado para optimizar procesos, fortalecer la seguridad y potenciar el crecimiento de nuestros clientes.</p>
                 <p>Contamos con amplia experiencia en el sector tecnológico y un equipo de profesionales altamente capacitados para diseñar, implementar e integrar soluciones a la medida de cada organización. Nuestro enfoque está orientado a la eficiencia operativa, la continuidad del negocio y la construcción de infraestructuras tecnológicas seguras, escalables y preparadas para los desafíos del futuro.</p>
-                <P>Nos comprometemos a brindar un servicio personalizado, confiable y orientado a resultados, respaldado por soporte técnico especializado y una filosofía de innovación continua.</P>
-                <P><strong>Transformamos tecnología en soluciones, innovación en oportunidades y visión en resultados.</strong> </P>
+                <p>Nos comprometemos a brindar un servicio personalizado, confiable y orientado a resultados, respaldado por soporte técnico especializado y una filosofía de innovación continua.</p>
+                <p class="highlight-text"><strong>Transformamos tecnología en soluciones, innovación en oportunidades y visión en resultados.</strong></p>
             </div>
-            <div class="nosotros-imagen">
+            <div class="nosotros-imagen reveal delay-1">
                 <img src="imagenes/nosotros.jpg" alt="Equipo de Profesionales TI Serticorp">
             </div>
         </div>
@@ -53,96 +73,129 @@ Conectamos tecnología, innovación y estrategia para llevar tu negocio al sigui
     <!-- Misión y Visión -->
     <section id="mision-vision" class="section-container">
         <div class="mv-grid">
-            <div class="mv-card">
+            <div class="mv-card reveal">
                 <div class="icon-box">🎯</div>
-                <h3>Nuestra Misión</h3>
+                <h3 class="title-green">Nuestra Misión</h3>
                 <p>Brindar soluciones tecnológicas integrales que comprendan equipamiento, servicios especializados e implementación de infraestructura tecnológica, incorporando innovación y tecnologías de vanguardia para impulsar la evolución y competitividad de nuestros clientes. Nos comprometemos con la calidad, la excelencia y el soporte especializado, ofreciendo soluciones confiables, eficientes y adaptadas a las necesidades de cada organización.</p>
             </div>
-            <div class="mv-card">
+            <div class="mv-card reveal delay-1">
                 <div class="icon-box">👁️</div>
-                <h3>Nuestra Visión</h3>
+                <h3 class="title-green">Nuestra Visión</h3>
                 <p>Ser un referente en el sector tecnológico corporativo, reconocidos por integrar equipamiento, servicios e implementaciones tecnológicas innovadoras, anticipándonos a las tendencias globales y promoviendo la adopción de tecnologías emergentes, como la inteligencia artificial y la ciberseguridad. Consolidar alianzas estratégicas con las principales marcas tecnológicas del mundo y construir relaciones de confianza que generen valor sostenible para nuestros clientes.</p>
             </div>
         </div>
     </section>
 
     <!-- Soluciones / Servicios -->
-    <section id="soluciones" class="section-container bg-white">
-        <h2 class="section-title text-center">Soluciones y Servicios que Ofrecemos</h2>
-        <p class="text-center subtitle">Un portafolio diversificado gracias a nuestras alianzas estratégicas con las principales marcas del mercado.</p>
+    <section id="soluciones" class="section-container bg-pattern">
+        <h2 class="section-title text-center reveal">Soluciones y Servicios que Ofrecemos</h2>
+        <p class="text-center subtitle reveal">Un portafolio diversificado gracias a nuestras alianzas estratégicas con las principales marcas del mercado.</p>
+        
         <div class="grid-tech">
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/computo.jpg" alt="Equipamiento en Cómputo"></div>
+            <div class="tech-card reveal">
+                <div class="card-img-box">
+                    <img src="imagenes/computo.jpg" alt="Equipamiento en Cómputo">
+                </div>
                 <div class="card-content">
                     <h3>Equipamiento en Cómputo</h3>
                     <p>Comercialización y despliegue de equipos informáticos de última generación para potenciar la productividad de su empresa.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/impresora.jpg" alt="Impresión"></div>
+            
+            <div class="tech-card reveal delay-1">
+                <div class="card-img-box">
+                    <img src="imagenes/impresora.jpg" alt="Impresión">
+                </div>
                 <div class="card-content">
                     <h3>Impresión y Digitalización</h3>
                     <p>Sistemas eficientes para la gestión de documentos, reduciendo costos operativos y mejorando flujos de trabajo.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/aulahibrida.jpg" alt="Aulas Híbridas"></div>
+            
+            <div class="tech-card reveal delay-2">
+                <div class="card-img-box">
+                    <img src="imagenes/aulahibrida.jpg" alt="Aulas Híbridas">
+                </div>
                 <div class="card-content">
-                    <h3>Aulas Híbridas y Video colaboración</h3>
+                    <h3>Aulas Híbridas y Colaboración</h3>
                     <p>Implementación de entornos colaborativos modernos que conectan equipos de trabajo presenciales y remotos de manera fluida.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/multimedia.jpg" alt="Equipamiento Multimedia"></div>
+            
+            <div class="tech-card reveal">
+                <div class="card-img-box">
+                    <img src="imagenes/multimedia.jpg" alt="Equipamiento Multimedia">
+                </div>
                 <div class="card-content">
                     <h3>Equipamiento Multimedia</h3>
                     <p>Provisión de proyectores, pantallas interactivas, publicitarias, VideoWalls y televisores para presentaciones de alto impacto.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/datacenter.jpg" alt="Data Center"></div>
+            
+            <div class="tech-card reveal delay-1">
+                <div class="card-img-box">
+                    <img src="imagenes/datacenter.jpg" alt="Data Center">
+                </div>
                 <div class="card-content">
                     <h3>Soluciones de Data Center</h3>
                     <p>Diseño, implementación y optimización de centros de datos seguros, escalables y de alta disponibilidad.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/networking.jpg" alt="Networking"></div>
+            
+            <div class="tech-card reveal delay-2">
+                <div class="card-img-box">
+                    <img src="imagenes/networking.jpg" alt="Networking">
+                </div>
                 <div class="card-content">
                     <h3>Soluciones de Networking</h3>
                     <p>Infraestructura de redes y comunicaciones robusta para asegurar la conectividad ininterrumpida de su organización.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop" alt="Infraestructura TI"></div>
+            
+            <div class="tech-card reveal">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop" alt="Infraestructura TI">
+                </div>
                 <div class="card-content">
                     <h3>Infraestructura TI</h3>
                     <p>Implementación integral de arquitecturas tecnológicas adaptadas a los requerimientos específicos de su negocio.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/videovigilancia.jpg" alt="Video vigilancia"></div>
+            
+            <div class="tech-card reveal delay-1">
+                <div class="card-img-box">
+                    <img src="imagenes/videovigilancia.jpg" alt="Video vigilancia">
+                </div>
                 <div class="card-content">
                     <h3>Sistemas de Video vigilancia</h3>
                     <p>Implementación de circuitos cerrados y cámaras de seguridad avanzadas para proteger sus activos y personal.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/cableado.jpg" alt="Cableado Estructurado"></div>
+            
+            <div class="tech-card reveal delay-2">
+                <div class="card-img-box">
+                    <img src="imagenes/cableado.jpg" alt="Cableado Estructurado">
+                </div>
                 <div class="card-content">
                     <h3>Cableado Estructurado</h3>
                     <p>Instalación profesional de puntos eléctricos y de data, garantizando certificaciones y estándares de calidad.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/mantenimiento.jpg" alt="Mantenimiento y Soporte"></div>
+            
+            <div class="tech-card reveal">
+                <div class="card-img-box">
+                    <img src="imagenes/mantenimiento.jpg" alt="Mantenimiento y Soporte">
+                </div>
                 <div class="card-content">
                     <h3>Mantenimiento y Soporte</h3>
                     <p>Mantenimiento preventivo y correctivo, junto con soporte técnico especializado de todo su equipamiento tecnológico.</p>
                 </div>
             </div>
-            <div class="tech-card">
-                <div class="card-img-box"><img src="imagenes/arrendamiento.jpg" alt="Arrendamiento Tecnológico"></div>
+            
+            <div class="tech-card reveal delay-1">
+                <div class="card-img-box">
+                    <img src="imagenes/arrendamiento.jpg" alt="Arrendamiento Tecnológico">
+                </div>
                 <div class="card-content">
                     <h3>Arrendamiento Tecnológico</h3>
                     <p>Modelos flexibles de leasing de equipos para que su empresa cuente siempre con tecnología actualizada sin descapitalizarse.</p>
@@ -151,30 +204,11 @@ Conectamos tecnología, innovación y estrategia para llevar tu negocio al sigui
         </div>
     </section>
 
-    <!-- Socios Estratégicos (Rutas Locales a carpeta CARRUSEL) -->
-    <section id="socios" class="section-container bg-light">
-        <h2 class="section-title text-center">Principales Socios Autorizados</h2>
-        
-        <div class="carousel-container">
+    <!-- Socios Estratégicos -->
+    <section id="socios" class="section-container bg-white">
+        <h2 class="section-title text-center reveal">Principales Socios Autorizados</h2>
+        <div class="carousel-container reveal delay-1">
             <div class="carousel-track">
-                <!-- Bloque 1 de marcas -->
-                <div class="marca-item"><img src="imagenes/CARRUSEL/aruba.svg" alt="HPE Aruba Networking"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/HPE.svg" alt="HPE"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/HP.svg" alt="HP"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/Fortinet.svg" alt="FORTINET"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/ViewSonic.svg" alt="ViewSonic"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/EPSON.svg" alt="EPSON"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/Hikvision.svg" alt="HIKVISION"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/Microsoft.svg" alt="Microsoft"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/Lenovo.svg" alt="Lenovo"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/Samsung.svg" alt="SAMSUNG"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/LG.svg" alt="LG"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/Cisco.svg" alt="CISCO"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/Dell.svg" alt="DELL"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/Poly.svg" alt="Poly"></div>
-                <div class="marca-item"><img src="imagenes/CARRUSEL/Huawei.svg" alt="HUAWEI"></div>
-                
-                <!-- Bloque 2 de marcas (Duplicado para el bucle infinito) -->
                 <div class="marca-item"><img src="imagenes/CARRUSEL/aruba.svg" alt="HPE Aruba Networking"></div>
                 <div class="marca-item"><img src="imagenes/CARRUSEL/HPE.svg" alt="HPE"></div>
                 <div class="marca-item"><img src="imagenes/CARRUSEL/HP.svg" alt="HP"></div>
@@ -194,51 +228,89 @@ Conectamos tecnología, innovación y estrategia para llevar tu negocio al sigui
         </div>
     </section>
 
-    <!-- Contacto -->
+    <!-- Contacto Alineado -->
     <footer id="contacto" class="main-footer">
-        <div class="footer-content">
-            <h2>Contactos y Asistencia</h2>
-            <div class="info-grid">
-                
-                <!-- Información Empresa -->
-                <div class="info-item">
-                    <h3><i class="fa-solid fa-building"></i> SERVICIOS TI CORPORATIVOS</h3>
-                    <p><i class="fa-solid fa-id-card"></i> RUC: 20609175045</p>
+        <div class="footer-content reveal">
+            <!-- Bloque Izquierdo: Textos -->
+            <div class="footer-left">
+                <h2>Contactos y Asistencia</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3><i class="fa-solid fa-building"></i> SERVICIOS TI CORPORATIVOS</h3>
+                        <p><i class="fa-solid fa-id-card"></i> RUC: 20609175045</p>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fa-solid fa-location-dot"></i> Ubicación</h3>
+                        <p>Jr. Iquique 884, Breña</p>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fa-solid fa-headset"></i> Comunicación</h3>
+                        <p><i class="fa-solid fa-phone"></i> Central: <strong>944 076 937</strong></p>
+                        <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:ventas@serticorp.com.pe" class="footer-link">ventas@serticorp.com.pe</a></p>
+                    </div>
                 </div>
-                
-                <!-- Ubicación -->
-                <div class="info-item">
-                    <h3><i class="fa-solid fa-location-dot"></i> Ubicación</h3>
-                    <p>Parque San Fernando 114, La Perla </p>
-                </div>
-                
-                <!-- Comunicación -->
-                <div class="info-item">
-                    <h3><i class="fa-solid fa-headset"></i> Comunicación</h3>
-                    <p><i class="fa-solid fa-phone"></i> Central: <strong>944 076 937</strong></p>
-                    <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:ventas@serticorp.com.pe" class="footer-link">ventas@serticorp.com.pe</a></p>
-                </div>
-                
-                <!-- Recuadro del Mapa interactivo y con marcador rojo actualizado -->
+            </div>
+            
+            <!-- Bloque Derecho: Mapa -->
+            <div class="footer-right">
                 <div class="map-col">
-                    <a href="https://maps.app.goo.gl/BkEu9ZmeUUkdYC256" target="_blank" class="map-link" title="Haz clic para abrir en Google Maps">
+                    <a href="https://www.google.com/maps/place/Iquique+884,+Bre%C3%B1a+15082,+Per%C3%BA/@-12.0592579,-77.0441669,18.5z/data=!4m6!3m5!1s0x9105c8c341dd9031:0x8c5346f887eb8c70!8m2!3d-12.0592259!4d-77.0435617!16s%2Fg%2F11dzqj93vt?hl=es-PE" target="_blank" class="map-link" title="Haz clic para abrir en Google Maps">
                         <iframe 
-                            src="https://maps.google.com/maps?q=Parque,%20San%20Fernando%20114,%20La%20Perla%2007016,%20Per%C3%BA&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy">
+                            src="https://maps.google.com/maps?q=-12.0592259,-77.0435617&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                         </iframe>
                     </a>
                 </div>
-
             </div>
         </div>
         
+        <!-- Bloque de Copyright Centrado -->
         <div class="footer-bottom">
             <p>&copy; 2026 SERTICORP. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51944076937" class="whatsapp-btn" target="_blank" title="Contáctanos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.getElementById('logo-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
 </body>
 </html>

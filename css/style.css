@@ -1,5 +1,7 @@
 /* ==========================================================================
-   Variables - Paleta "Clean Tech"
+   VARIABLES GLOBALES (PALETA "CLEAN TECH"):
+   Defina los colores principales del sitio aquí. Modificar el valor hexadecimal
+   de '--color-primario' cambiará el acento verde en toda la web (botones, hover, líneas).
    ========================================================================== */
 :root {
     --color-blanco: #ffffff;
@@ -12,6 +14,11 @@
     --fuente-principal: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
+/* ==========================================================================
+   RESETEO BÁSICO Y ESTILOS GLOBALES:
+   Garantiza que todos los navegadores muestren los márgenes, paddings 
+   y la fuente elegida de manera uniforme.
+   ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--fuente-principal); }
 html { scroll-behavior: smooth; }
 body { background-color: var(--color-blanco); color: var(--color-texto); line-height: 1.7; overflow-x: hidden; }
@@ -25,6 +32,7 @@ p { text-align: justify; }
     color: var(--color-texto);
 }
 
+/* UTILIDAD: Patrón de fondo cuadriculado tenue usado en la sección de soluciones */
 .bg-pattern {
     background-color: var(--color-fondo-claro);
     background-image: radial-gradient(var(--color-texto) 0.5px, transparent 0.5px);
@@ -35,7 +43,9 @@ p { text-align: justify; }
 .bg-white { background-color: var(--color-blanco); }
 
 /* ==========================================================================
-   Tipografía y Animaciones Base
+   TIPOGRAFÍA GENERAL Y CLASES DE ANIMACIÓN (IntersectionObserver):
+   Estructura estándar de títulos y las clases '.reveal' que JavaScript 
+   controla para mostrar elementos suavemente de abajo hacia arriba.
    ========================================================================== */
 .section-title { font-size: 2.5rem; color: var(--color-azul-texto); margin-bottom: 25px; font-weight: 800; }
 .text-center { text-align: center; }
@@ -44,22 +54,24 @@ p { text-align: justify; }
 .highlight-text { color: var(--color-primario); font-size: 1.15rem; }
 .title-green { color: var(--color-primario) !important; font-size: 1.8rem; margin-bottom: 15px; }
 
+/* Animaciones controladas por JS */
 .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 .delay-1 { transition-delay: 0.15s; }
 .delay-2 { transition-delay: 0.3s; }
 
-/* Efecto hover para el título principal y títulos de sección */
+/* Efecto hover suave para mantener interactividad en encabezados importantes */
 .hero-content h1, .section-title {
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .hero-content h1:hover, .section-title:hover {
     transform: translateY(-8px) scale(1.02);
 }
 
 /* ==========================================================================
-   Header
+   CABECERA (HEADER) Y MENÚ DE NAVEGACIÓN:
+   Estilos de la barra de navegación superior. Usa 'position: sticky' 
+   para acompañar al usuario en el scroll.
    ========================================================================== */
 .main-header {
     position: sticky; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center;
@@ -70,17 +82,21 @@ p { text-align: justify; }
 .logo { height: 100px; width: auto; transition: transform 0.3s ease, filter 0.3s ease; }
 .logo:hover { transform: scale(1.03); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); }
 
+/* Enlaces del menú desktop con línea animada inferior (::after) */
 .nav-links { list-style: none; display: flex; gap: 30px; }
 .nav-links a { color: var(--color-azul-texto); text-decoration: none; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; position: relative; transition: color 0.3s ease; }
 .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--color-primario); transition: width 0.3s ease; }
 .nav-links a:hover { color: var(--color-primario); }
 .nav-links a:hover::after { width: 100%; }
 
+/* Botón hamburguesa (oculto en escritorio, visible vía media query) */
 .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 6px; z-index: 1100; }
 .menu-toggle .bar { width: 30px; height: 3px; background-color: var(--color-azul-texto); border-radius: 3px; transition: all 0.3s ease-in-out; }
 
 /* ==========================================================================
-   Hero Section
+   SECCIÓN HERO (BANNER PRINCIPAL):
+   Imagen de fondo y capa de gradiente oscura superpuesta.
+   El H1 tiene la animación principal de carga.
    ========================================================================== */
 #hero {
     min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center;
@@ -88,10 +104,11 @@ p { text-align: justify; }
     background-attachment: fixed; border-bottom: 5px solid var(--color-primario); position: relative;
 }
 .hero-content { max-width: 900px; color: var(--color-blanco); z-index: 2; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-.hero-content h2 { font-size: 4rem; margin-bottom: 20px; color: var(--color-blanco); line-height: 1.1; font-weight: 800; opacity: 0; animation: fadeInUpClean 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--color-blanco); line-height: 1.1; font-weight: 800; opacity: 0; animation: fadeInUpClean 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
 .hero-content:hover { transform: translateY(-10px) scale(1.02); }
 .hero-content p { font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 40px; opacity: 0; transform: translateY(30px); animation: fadeInUpClean 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards; }
 
+/* Botón principal del Hero (CTA) */
 .btn-primary {
     display: inline-block; padding: 16px 45px; color: var(--color-azul-texto); background-color: var(--color-primario);
     text-decoration: none; font-weight: 800; font-size: 1.1rem; border-radius: 50px; text-transform: uppercase;
@@ -100,10 +117,13 @@ p { text-align: justify; }
 }
 .btn-primary:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 10px 30px rgba(30, 211, 150, 0.8); background-color: #17b982; color: #fff; }
 
+/* Keyframe genérico de carga en el primer paint */
 @keyframes fadeInUpClean { 0% { opacity: 0; transform: translateY(40px); } 100% { opacity: 1; transform: translateY(0); } }
 
 /* ==========================================================================
-   Sección Nosotros & Misión/Visión
+   SECCIONES DE NOSOTROS Y MISIÓN/VISIÓN:
+   Utiliza sistema Grid. Control de espaciados, sombreados de tarjetas
+   y efectos de movimiento (hover) en imágenes e íconos.
    ========================================================================== */
 .nosotros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center; }
 .nosotros-texto p { margin-bottom: 20px; font-size: 1.1rem; }
@@ -118,7 +138,9 @@ p { text-align: justify; }
 .mv-card:hover .icon-box { transform: scale(1.1) rotate(10deg); }
 
 /* ==========================================================================
-   Tarjetas de Soluciones 
+   TARJETAS DE SOLUCIONES Y SERVICIOS:
+   Grid flexible auto-fit. Asegura que todas las tarjetas midan lo mismo.
+   Incluye superposición oscura interactiva en el hover de las fotos.
    ========================================================================== */
 .grid-tech { 
     display: grid; 
@@ -140,18 +162,19 @@ p { text-align: justify; }
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     height: 100%; 
 }
-
 .tech-card:hover { 
     transform: translateY(-8px); 
     box-shadow: 0 15px 35px rgba(0,0,0,0.12); 
 }
 
+/* Barra inferior verde que crece al hacer hover */
 .tech-card::after { 
     content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 5px; 
     background: var(--color-primario); transition: height 0.3s ease; z-index: 20; 
 }
 .tech-card:hover::after { height: 10px; }
 
+/* Contenedor fijo de altura para las imágenes de servicio */
 .card-img-box { 
     width: 100%; 
     height: 240px; 
@@ -162,6 +185,7 @@ p { text-align: justify; }
     overflow: hidden;
 }
 
+/* Gradiente superpuesto que aparece al hover para dar enfoque tecnológico */
 .card-img-box::before { 
     content: ''; position: absolute; top:0; left:0; width:100%; height:100%; 
     background: linear-gradient(to bottom, transparent 50%, rgba(10,37,64,0.7) 100%); 
@@ -208,27 +232,33 @@ p { text-align: justify; }
 }
 
 /* ==========================================================================
-   Carrusel
+   CARRUSEL INFINITO DE SOCIOS (SIN JAVASCRIPT):
+   Animación @keyframes para deslizar el track hacia la izquierda.
+   Utiliza ::before y ::after para el difuminado lateral simulando borde.
    ========================================================================== */
 .carousel-container { width: 100%; overflow: hidden; position: relative; padding: 30px 0; max-width: 1200px; margin: 0 auto; }
 .carousel-container::before, .carousel-container::after { content: ""; position: absolute; top: 0; width: 150px; height: 100%; z-index: 2; }
 .carousel-container::before { left: 0; background: linear-gradient(to right, var(--color-blanco) 0%, transparent 100%); }
 .carousel-container::after { right: 0; background: linear-gradient(to left, var(--color-blanco) 0%, transparent 100%); }
+
 .carousel-track { display: flex; gap: 40px; width: max-content; animation: scroll 35s linear infinite; }
-.carousel-track:hover { animation-play-state: paused; }
+.carousel-track:hover { animation-play-state: paused; /* Pausa el carrusel al pasar el ratón */ }
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 20px)); } }
+
 .marca-item { background: var(--color-fondo-claro); padding: 25px; border-radius: 12px; width: 200px; display: flex; justify-content: center; align-items: center; box-shadow: inset 0 0 10px rgba(0,0,0,0.02); border: 1px solid transparent; transition: all 0.4s ease; flex-shrink: 0; }
 .marca-item img { max-width: 120px; height: 45px; object-fit: contain; transition: transform 0.4s ease; }
 .marca-item:hover { background: var(--color-blanco); border-color: var(--color-primario); box-shadow: 0 10px 30px rgba(30, 211, 150, 0.15); }
 .marca-item:hover img { transform: scale(1.15); }
 
 /* ==========================================================================
-   Footer
+   PIE DE PÁGINA (FOOTER) E IFRAME DEL MAPA:
+   Estructura final responsiva. Estilos oscuros invertidos con acentos verdes.
    ========================================================================== */
 .main-footer { background-color: var(--color-azul-texto); color: var(--color-blanco); padding: 30px 5% 15px; position: relative; }
 .footer-content { display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; margin-bottom: 20px; }
 .footer-left { flex: 1; }
 .footer-left h2 { margin-top: 0; color: var(--color-blanco); margin-bottom: 25px; text-align: left; line-height: 1.2; }
+
 .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-items: start; }
 .info-item { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
 .info-item h3 { color: var(--color-primario); margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; }
@@ -246,7 +276,9 @@ p { text-align: justify; }
 .footer-bottom p { text-align: center !important; margin: 0; }
 
 /* ==========================================================================
-   Botón Flotante WhatsApp con Tooltip Integrado
+   BOTÓN FLOTANTE WHATSAPP (ACCESIBILIDAD Y TOOLTIP CSS):
+   Se mantiene fijo y superpuesto (z-index alto). 
+   El tooltip "¡Escríbenos!" se implementa exclusivamente mediante ::before.
    ========================================================================== */
 .whatsapp-btn {
     position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white;
@@ -264,28 +296,39 @@ p { text-align: justify; }
 .whatsapp-btn:hover::before { opacity: 1; transform: translateX(0); }
 
 /* ==========================================================================
-   Media Queries
+   DISEÑO RESPONSIVO (MEDIA QUERIES):
+   Ajustes según el ancho de la ventana para garantizar visualización 
+   óptima en tablets y dispositivos móviles.
    ========================================================================== */
+/* Tablet Horizontal / Pantallas Medianas */
 @media (max-width: 992px) {
     .footer-content { flex-direction: column; }
     .footer-right { width: 100%; }
     .map-col { height: 250px; }
 }
 
+/* Tablet Vertical / Menú Colapsable */
 @media (max-width: 900px) {
-    .hero-content h1 { font-size: 3rem; }
+    .hero-content h1 { font-size: 2.8rem; }
+    
+    /* Muestra botón hamburguesa y oculta nav estándar */
     .menu-toggle { display: flex; }
     .nav-links { position: absolute; top: 100%; left: -100%; flex-direction: column; background: var(--color-blanco); width: 100%; text-align: center; padding: 30px 0; transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 20px 30px rgba(0,0,0,0.1); }
     .nav-links.active { left: 0; }
     .nav-links li { margin: 20px 0; }
+    
+    /* Animación X del botón hamburguesa */
     .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
     .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
     .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    
+    /* Apila la foto debajo del texto en sección "Nosotros" */
     .nosotros-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
+/* Teléfonos Inteligentes */
 @media (max-width: 480px) {
     .section-title { font-size: 2.2rem; }
-    .hero-content h1 { font-size: 2.4rem; }
+    .hero-content h1 { font-size: 2.2rem; }
     .grid-tech, .mv-grid { grid-template-columns: 1fr; }
 }

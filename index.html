@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Etiquetas SEO y Open Graph -->
+    <!-- CONFIGURACIÓN SEO Y OPEN GRAPH: 
+         Estas etiquetas definen cómo se ve la página en los resultados de Google y al compartir en redes sociales. 
+         Modificar si cambia el giro del negocio, la descripción principal o el banner a mostrar. -->
     <title>SERTICORP - Servicios TI Corporativos</title>
     <meta name="description" content="SERTICORP S.A.C. - Especialistas en desarrollo e integración de soluciones tecnológicas, networking, data centers y equipamiento TI corporativo en Perú.">
     <meta property="og:title" content="SERTICORP - Servicios TI Corporativos">
@@ -12,17 +14,24 @@
     <meta property="og:image" content="imagenes/serticorp.png">
     <meta property="og:type" content="website">
 
-    <!-- Optimización LCP: Precarga de la imagen principal -->
+    <!-- RENDIMIENTO (LCP): 
+         Precarga de la imagen de fondo de la sección Hero para mejorar el tiempo de carga inicial. 
+         Actualizar el atributo href si se reemplaza el archivo 'hero-bg.jpg'. -->
     <link rel="preload" as="image" href="imagenes/hero-bg.jpg">
 
-    <!-- Librería para los iconos de contacto y WhatsApp -->
+    <!-- RECURSOS EXTERNOS: 
+         Librería de FontAwesome para renderizar los íconos del footer y el botón de WhatsApp. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- TRUCO PARA LIMPIAR CACHÉ: Añadimos ?v=5.0 -->
+    <!-- HOJA DE ESTILOS PRINCIPAL: 
+         El parámetro '?v=10.0' al final evita que el navegador cargue estilos antiguos almacenados en caché. 
+         Incrementar el número (ej. ?v=11.0) cada vez que se realice un cambio significativo en el archivo CSS. -->
     <link rel="stylesheet" href="css/style.css?v=10.0">
 </head>
 <body>
-    <!-- Encabezado Fondo Blanco -->
+    <!-- CABECERA PRINCIPAL (HEADER): 
+         Contenedor de navegación fijo (sticky) en la parte superior. 
+         Incluye el logotipo a la izquierda y los enlaces de navegación a la derecha. -->
     <header class="main-header" id="inicio">
         <div class="logo-container">
             <a href="#" id="logo-link">
@@ -30,13 +39,17 @@
             </a>
         </div>
         
-        <!-- Menú Hamburguesa con Accesibilidad (a11y) -->
+        <!-- MENÚ MÓVIL (HAMBURGUESA): 
+             Botón visible solo en resoluciones pequeñas (controlado por media queries). 
+             Los atributos 'aria' y 'role' mantienen el sitio accesible para lectores de pantalla. -->
         <div class="menu-toggle" id="mobile-menu" role="button" aria-expanded="false" aria-label="Abrir menú de navegación" tabindex="0">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
 
+        <!-- NAVEGACIÓN (NAV): 
+             Enlaces ancla (anchors) que dirigen a los diferentes IDs dentro de la misma página. -->
         <nav>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#nosotros">Nosotros</a></li>
@@ -47,17 +60,22 @@
         </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- SECCIÓN HERO (ABOVE THE FOLD): 
+         Primer impacto visual del sitio. Contiene el encabezado principal y el botón de llamada a la acción (CTA). -->
     <section id="hero">
         <div class="hero-content">
-            <h2>Impulsamos el futuro a través de la tecnología</h2>
+            <!-- ENCABEZADO PRINCIPAL (H1): 
+                 Crucial para el SEO. Define el tema principal de la página web. Solo debe haber un H1 por página. -->
+            <h1>Impulsamos el futuro a través de la tecnología</h1>
             <p>Transformamos los desafíos empresariales en oportunidades mediante soluciones tecnológicas integrales, innovadoras y de alto impacto, que impulsan la transformación digital y la competitividad.
             Conectamos tecnología, innovación y estrategia para llevar tu negocio al siguiente nivel.</p>
             <a href="#contacto" class="btn-primary">Cotizar Servicios</a>
         </div>
     </section>
 
-    <!-- Nosotros -->
+    <!-- SECCIÓN NOSOTROS: 
+         Bloque informativo de la empresa estructurado en dos columnas mediante CSS Grid. 
+         La clase 'reveal' es detectada por JavaScript para animar su entrada al hacer scroll. -->
     <section id="nosotros" class="section-container bg-white">
         <div class="nosotros-grid reveal">
             <div class="nosotros-texto">
@@ -73,7 +91,8 @@
         </div>
     </section>
 
-    <!-- Misión y Visión -->
+    <!-- SECCIÓN MISIÓN Y VISIÓN: 
+         Tarjetas informativas (cards) destacadas. El fondo tiene configuración 'fixed' en CSS para crear un ligero efecto parallax. -->
     <section id="mision-vision" class="section-container">
         <div class="mv-grid">
             <div class="mv-card reveal">
@@ -89,12 +108,15 @@
         </div>
     </section>
 
-    <!-- Soluciones / Servicios -->
+    <!-- SECCIÓN SOLUCIONES Y SERVICIOS: 
+         Cuadrícula de servicios. Para agregar un nuevo servicio, duplique un bloque '<div class="tech-card...">' 
+         completo, actualice la ruta de la imagen en 'src' y edite el texto interno. -->
     <section id="soluciones" class="section-container bg-pattern">
         <h2 class="section-title text-center reveal">Soluciones y Servicios que Ofrecemos</h2>
         <p class="text-center subtitle reveal">Un portafolio diversificado gracias a nuestras alianzas estratégicas con las principales marcas del mercado.</p>
         
         <div class="grid-tech">
+            <!-- Bloque de Servicio 1 -->
             <div class="tech-card reveal">
                 <div class="card-img-box">
                     <img src="imagenes/computo.jpg" alt="Equipamiento en Cómputo">
@@ -105,6 +127,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 2 -->
             <div class="tech-card reveal delay-1">
                 <div class="card-img-box">
                     <img src="imagenes/impresora.jpg" alt="Impresión">
@@ -115,6 +138,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 3 -->
             <div class="tech-card reveal delay-2">
                 <div class="card-img-box">
                     <img src="imagenes/aulahibrida.jpg" alt="Aulas Híbridas">
@@ -125,6 +149,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 4 -->
             <div class="tech-card reveal">
                 <div class="card-img-box">
                     <img src="imagenes/multimedia.jpg" alt="Equipamiento Multimedia">
@@ -135,6 +160,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 5 -->
             <div class="tech-card reveal delay-1">
                 <div class="card-img-box">
                     <img src="imagenes/datacenter.jpg" alt="Data Center">
@@ -145,6 +171,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 6 -->
             <div class="tech-card reveal delay-2">
                 <div class="card-img-box">
                     <img src="imagenes/networking.jpg" alt="Networking">
@@ -155,6 +182,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 7 -->
             <div class="tech-card reveal">
                 <div class="card-img-box">
                     <img src="imagenes/infra.jpg" alt="Infraestructura TI">
@@ -165,6 +193,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 8 -->
             <div class="tech-card reveal delay-1">
                 <div class="card-img-box">
                     <img src="imagenes/videovigilancia.jpg" alt="Video vigilancia">
@@ -175,6 +204,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 9 -->
             <div class="tech-card reveal delay-2">
                 <div class="card-img-box">
                     <img src="imagenes/cableado.jpg" alt="Cableado Estructurado">
@@ -185,6 +215,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 10 -->
             <div class="tech-card reveal">
                 <div class="card-img-box">
                     <img src="imagenes/mantenimiento.jpg" alt="Mantenimiento y Soporte">
@@ -195,6 +226,7 @@
                 </div>
             </div>
             
+            <!-- Bloque de Servicio 11 -->
             <div class="tech-card reveal delay-1">
                 <div class="card-img-box">
                     <img src="imagenes/arrendamiento.jpg" alt="Arrendamiento Tecnológico">
@@ -207,7 +239,8 @@
         </div>
     </section>
 
-    <!-- Socios Estratégicos -->
+    <!-- SECCIÓN SOCIOS ESTRATÉGICOS (CARRUSEL): 
+         Animación CSS infinita. Si se agrega un nuevo logo, debe insertarse dentro del contenedor '.carousel-track'. -->
     <section id="socios" class="section-container bg-white">
         <h2 class="section-title text-center reveal">Principales Socios Autorizados</h2>
         <div class="carousel-container reveal delay-1">
@@ -231,10 +264,12 @@
         </div>
     </section>
 
-    <!-- Contacto Alineado -->
+    <!-- PIE DE PÁGINA (FOOTER) Y CONTACTO: 
+         Sección de cierre. Contiene direcciones, teléfonos, correos y un iFrame embebido de Google Maps. 
+         Para cambiar la ubicación del mapa, reemplace la URL en el atributo 'src' del iframe. -->
     <footer id="contacto" class="main-footer">
         <div class="footer-content reveal">
-            <!-- Bloque Izquierdo: Textos -->
+            <!-- Información de contacto e Identidad Legal -->
             <div class="footer-left">
                 <h2>Contactos y Asistencia</h2>
                 <div class="info-grid">
@@ -254,7 +289,7 @@
                 </div>
             </div>
             
-            <!-- Bloque Derecho: Mapa con Atributos de Seguridad -->
+            <!-- Iframe de Google Maps -->
             <div class="footer-right">
                 <div class="map-col">
                     <a href="https://www.google.com/maps/place/Iquique+884,+Bre%C3%B1a+15082,+Per%C3%BA/@-12.0592579,-77.0441669,18.5z" target="_blank" rel="noopener noreferrer" class="map-link" title="Haz clic para abrir en Google Maps">
@@ -272,18 +307,23 @@
         </div>
     </footer>
 
-    <!-- Botón Flotante WhatsApp con Atributos de Seguridad -->
+    <!-- BOTÓN FLOTANTE DE WHATSAPP: 
+         Mantener el target="_blank" para abrir en una pestaña nueva. 
+         Para cambiar de número, modificar la URL "https://wa.me/51XXXXXXXXX". -->
     <a href="https://wa.me/51944076937" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" title="Contáctanos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPTS ACTUALIZADOS -->
+    <!-- LÓGICA JAVASCRIPT: 
+         Controla el menú hamburguesa, el scroll al inicio de la página y las animaciones visuales (IntersectionObserver). -->
     <script>
+        // Funcionalidad: Regresar arriba fluidamente al hacer clic en el logo
         document.getElementById('logo-link').addEventListener('click', function(e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
+        // Funcionalidad: Apertura y cierre del menú móvil (Hamburguesa)
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
         const navItems = document.querySelectorAll('.nav-links a');
@@ -295,6 +335,7 @@
             mobileMenu.setAttribute('aria-expanded', !isExpanded);
         });
 
+        // Soporte de accesibilidad para operar el menú con teclado (Espacio/Enter)
         mobileMenu.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -302,6 +343,7 @@
             }
         });
 
+        // Cierra el menú móvil automáticamente al hacer clic en un enlace
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
@@ -310,12 +352,13 @@
             });
         });
 
+        // Animación al hacer scroll: Detecta cuándo un elemento '.reveal' entra en pantalla y le añade '.active'
         const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
+                    observer.unobserve(entry.target); // Dejar de observar una vez que ya apareció
                 }
             });
         }, observerOptions);

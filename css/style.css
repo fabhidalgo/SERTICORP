@@ -21,7 +21,7 @@
    ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--fuente-principal); }
 html { scroll-behavior: smooth; }
-body { background-color: var(--color-blanco); color: var(--color-texto); line-height: 1.7; overflow-x: hidden; }
+body { background-color: var(--color-blanco); color: var(--color-texto); line-height: 1.4; overflow-x: hidden; }
 
 p { text-align: justify; }
 
@@ -104,9 +104,9 @@ p { text-align: justify; }
     background-attachment: fixed; border-bottom: 5px solid var(--color-primario); position: relative;
 }
 .hero-content { max-width: 900px; color: var(--color-blanco); z-index: 2; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-.hero-content h1 { font-size: 2rem; margin-bottom: 20px; color: var(--color-blanco); line-height: 1.1; font-weight: 800; opacity: 0; animation: fadeInUpClean 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--color-blanco); line-height: 1.1; font-weight: 800; opacity: 0; animation: fadeInUpClean 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
 .hero-content:hover { transform: translateY(-10px) scale(1.02); }
-.hero-content p { font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 40px; opacity: 0; transform: translateY(30px); animation: fadeInUpClean 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards; }
+.hero-content p { font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 40px; opacity: 0; transform: translateY(30px); animation: fadeInUpClean 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards; text-align: center; }
 
 /* Botón principal del Hero (CTA) */
 .btn-primary {
@@ -228,7 +228,7 @@ p { text-align: justify; }
     font-size: 1.05rem; 
     color: var(--color-texto); 
     margin: 0; 
-    line-height: 1.6; 
+    line-height: 1.4; 
 }
 
 /* ==========================================================================
